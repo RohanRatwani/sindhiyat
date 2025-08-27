@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Center - Sindhiyat</title>
+    <meta name="description" content="Master the Sindhi language with interactive lessons, AI-powered tools, and cultural context learning. Start your journey to fluency today.">
+    <meta name="keywords" content="Sindhi language learning, interactive lessons, AI tutor, Sindhi alphabet, vocabulary, grammar, cultural learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fff;
+            color: #b30000;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #fff;
+            border-bottom: 2px solid #b30000;
+            padding: 0.5rem 0;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #b30000;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links.mobile-hidden {
+            display: none;
+        }
+        .mobile-menu-toggle {
+            display: none;
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .nav-links a {
+            color: #b30000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            background: #b30000;
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .cta-btn {
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover {
+            background: #d32f2f;
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            color: #b30000;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1.2rem;
+        }
+        .learning-path {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .path-step {
+            background: #fff;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            min-width: 150px;
+            transition: transform 0.2s;
+        }
+        .path-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(179,0,0,0.15);
+        }
+        .path-step h3 {
+            color: #b30000;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .lesson-card {
+            background: #fff;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(179,0,0,0.07);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .lesson-card:hover {
+            box-shadow: 0 4px 16px rgba(179,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        .lesson-card h3 {
+            color: #b30000;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .lesson-card p {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .lesson-btn {
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+        .lesson-btn:hover {
+            background: #d32f2f;
+        }
+        .tools-section {
+            margin-bottom: 2rem;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .tool-card {
+            background: #fff;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(179,0,0,0.07);
+            transition: box-shadow 0.2s;
+        }
+        .tool-card:hover {
+            box-shadow: 0 4px 16px rgba(179,0,0,0.15);
+        }
+        .tool-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .tool-card h4 {
+            color: #b30000;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .tool-card p {
+            color: #333;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .tool-btn {
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.4rem 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .tool-btn:hover {
+            background: #d32f2f;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease-in-out;
+        }
+        .modal-content h2 {
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .modal-content p {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .modal-close {
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .modal-close:hover {
+            background: #d32f2f;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        /* Footer */
+        .footer {
+            background: #b30000;
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            margin-top: 2rem;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        .footer-section {
+            min-width: 200px;
+        }
+        .footer-section h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.4rem;
+        }
+        .footer-section ul a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.98rem;
+        }
+        .footer-section ul a:hover {
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container, .main-content, .footer-content {
+                max-width: 98vw;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .lesson-grid, .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            .learning-path {
+                flex-direction: column;
+                align-items: center;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                border: 2px solid #b30000;
+                border-top: none;
+                flex-direction: column;
+                padding: 1rem 0;
+                display: none;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .cta-buttons {
+                margin-top: 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar, .footer {
+                padding: 1rem 0;
+            }
+            .cta-btn {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.98rem;
+            }
+            .lesson-card, .tool-card {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/sindhiyat.jpg" alt="Sindhiyat Logo" class="logo-img">
+                Sindhiyat
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cultural-heritage.html">Cultural Heritage</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="#" onclick="showModal()">Community</a></li>
+                <li><a href="#" onclick="showModal()">Support Us</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <button class="cta-btn" onclick="showModal()">Login</button>
+                <button class="cta-btn" onclick="showModal()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <section class="hero">
+            <h1>Sindhi Language Learning Center</h1>
+            <p>Embark on an interactive journey to master Sindhi with our AI-powered tools, cultural context lessons, and engaging exercises.</p>
+            <button class="cta-btn" onclick="showModal()">Start Your Learning Journey</button>
+        </section>
+
+        <section class="learning-path">
+            <div class="path-step">
+                <h3>📚 Basics</h3>
+                <p>Alphabet & Pronunciation</p>
+            </div>
+            <div class="path-step">
+                <h3>🗣️ Conversation</h3>
+                <p>Daily Phrases</p>
+            </div>
+            <div class="path-step">
+                <h3>📖 Grammar</h3>
+                <p>Sentence Structure</p>
+            </div>
+            <div class="path-step">
+                <h3>🎭 Culture</h3>
+                <p>Contextual Learning</p>
+            </div>
+        </section>
+
+        <section class="tools-section">
+            <h2 style="text-align: center; color: #b30000; margin-bottom: 1rem;">Interactive Learning Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">🤖</div>
+                    <h4>AI Language Tutor</h4>
+                    <p>Get personalized feedback on your pronunciation and grammar with our advanced AI assistant.</p>
+                    <button class="tool-btn" onclick="showModal()">Try AI Tutor</button>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🔊</div>
+                    <h4>Speech Recognition</h4>
+                    <p>Practice speaking Sindhi with real-time pronunciation analysis and correction.</p>
+                    <button class="tool-btn" onclick="showModal()">Practice Speaking</button>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📝</div>
+                    <h4>Smart Translator</h4>
+                    <p>Translate between Sindhi and English with cultural context and regional variations.</p>
+                    <button class="tool-btn" onclick="showModal()">Translate Now</button>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🎯</div>
+                    <h4>Interactive Quizzes</h4>
+                    <p>Test your knowledge with adaptive quizzes that adjust to your learning level.</p>
+                    <button class="tool-btn" onclick="showModal()">Take Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-grid">
+            <div class="lesson-card">
+                <h3>Sindhi Alphabet & Script</h3>
+                <p>Master the beautiful Sindhi script with interactive letter tracing, pronunciation guides, and practice exercises.</p>
+                <button class="lesson-btn" onclick="showModal()">Start Alphabet Lesson</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Basic Vocabulary</h3>
+                <p>Learn essential words and phrases for everyday communication with audio pronunciation and visual aids.</p>
+                <button class="lesson-btn" onclick="showModal()">Learn Vocabulary</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Greetings & Politeness</h3>
+                <p>Discover Sindhi etiquette and social norms through interactive dialogues and cultural context.</p>
+                <button class="lesson-btn" onclick="showModal()">Practice Greetings</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Family & Relationships</h3>
+                <p>Learn terms related to family, relationships, and social structures in Sindhi culture.</p>
+                <button class="lesson-btn" onclick="showModal()">Explore Family Terms</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Cuisine & Food</h3>
+                <p>Master food-related vocabulary while learning about traditional Sindhi dishes and cooking terms.</p>
+                <button class="lesson-btn" onclick="showModal()">Culinary Vocabulary</button>
+            </div>
+            <div class="lesson-card">
+                <h3>Festivals & Traditions</h3>
+                <p>Learn about Sindhi festivals, ceremonies, and cultural celebrations with authentic audio and visuals.</p>
+                <button class="lesson-btn" onclick="showModal()">Festival Vocabulary</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="comingSoonModal" class="modal">
+        <div class="modal-content">
+            <h2>Coming Soon! 🚀</h2>
+            <p>This feature is currently under development. We're working hard to bring you the best learning experience possible. Stay tuned for updates!</p>
+            <button class="modal-close" onclick="closeModal()">Got it!</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cultural-heritage.html">Cultural Heritage</a></li>
+                    <li><a href="learning.html">Learning Center</a></li>
+                    <li><a href="#" onclick="showModal()">Community Guidelines</a></li>
+                    <li><a href="#" onclick="showModal()">Privacy Policy</a></li>
+                    <li><a href="#" onclick="showModal()">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Contact Information</h5>
+                <div class="contact-info">
+                    Email: hello@sindhiyat.com<br>
+                    Community Support: community@sindhiyat.com<br>
+                    Technical Support: support@sindhiyat.com
+                </div>
+            </div>
+            <div class="footer-section">
+                <h5>Social Media</h5>
+                <ul>
+                    <li><a href="#" onclick="showModal()">Facebook Community Group</a></li>
+                    <li><a href="#" onclick="showModal()">Instagram Cultural Posts</a></li>
+                    <li><a href="#" onclick="showModal()">YouTube Educational Videos</a></li>
+                    <li><a href="#" onclick="showModal()">Twitter Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Newsletter Signup</h5>
+                <div class="newsletter">
+                    <form>
+                        <input type="email" placeholder="Your email">
+                        <button type="submit" onclick="showModal(); return false;">Subscribe</button>
+                    </form>
+                    <div>Stay Connected with Sindhi Culture</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Sindhiyat. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function showModal() {
+            document.getElementById('comingSoonModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('comingSoonModal').classList.remove('show');
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('comingSoonModal');
+            if (event.target == modal) {
+                modal.classList.remove('show');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -25,6 +25,7 @@
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
         .logo-img {
             width: 48px;
@@ -48,6 +49,19 @@
             list-style: none;
             margin: 0;
             padding: 0;
+        }
+        .nav-links.mobile-hidden {
+            display: none;
+        }
+        .mobile-menu-toggle {
+            display: none;
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 1.2rem;
         }
         .nav-links a {
             color: #b30000;
@@ -393,7 +407,62 @@
             font-size: 0.95rem;
             color: #fff;
         }
-        /* Responsive */
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease-in-out;
+        }
+        .modal-content h2 {
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .modal-content p {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .modal-close {
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .modal-close:hover {
+            background: #d32f2f;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
         @media (max-width: 900px) {
             .container, .main-content, .footer-content {
                 max-width: 98vw;
@@ -407,6 +476,27 @@
             .about-gallery, .hero-gallery, .highlight-gallery {
                 flex-direction: column;
                 align-items: center;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                border: 2px solid #b30000;
+                border-top: none;
+                flex-direction: column;
+                padding: 1rem 0;
+                display: none;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .cta-buttons {
+                margin-top: 1rem;
             }
         }
         @media (max-width: 600px) {
@@ -435,16 +525,17 @@
                 <img src="images/sindhiyat.jpg" alt="Sindhiyat Logo" class="logo-img">
                 Sindhiyat
             </a>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="cultural-heritage.html">Cultural Heritage</a></li>
-                <li><a href="#">Learning</a></li>
-                <li><a href="#">Community</a></li>
-                <li><a href="#">Support Us</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="#" onclick="showModal()">Community</a></li>
+                <li><a href="#" onclick="showModal()">Support Us</a></li>
             </ul>
             <div class="cta-buttons">
-                <button class="cta-btn">Login</button>
-                <button class="cta-btn">Sign Up</button>
+                <button class="cta-btn" onclick="showModal()">Login</button>
+                <button class="cta-btn" onclick="showModal()">Sign Up</button>
             </div>
         </div>
     </nav>
@@ -463,8 +554,8 @@
                 Discover the vibrant tapestry of Sindhi culture, from our ancient roots in the Indus Valley to our global diaspora today. Join thousands of community members in celebrating, learning, and preserving our cherished traditions for future generations.
             </p>
             <div class="hero-cta">
-                <button class="cta-btn">Explore Our Heritage</button>
-                <button class="cta-btn">Start Learning Sindhi</button>
+                <button class="cta-btn" onclick="showModal()">Explore Our Heritage</button>
+                <button class="cta-btn" onclick="showModal()">Start Learning Sindhi</button>
             </div>
         </section>
 
@@ -574,8 +665,8 @@
             <p>
                 Join thousands of Sindhi community members who are already exploring their heritage, learning their language, and connecting with their roots through Sindhiyat.
             </p>
-            <button class="cta-btn">Sign Up Free Today</button>
-            <button class="cta-btn">Explore as Guest</button>
+            <button class="cta-btn" onclick="showModal()">Sign Up Free Today</button>
+            <button class="cta-btn" onclick="showModal()">Explore as Guest</button>
             <div class="info-list">
                 ✓ Free to join and explore basic content<br>
                 ✓ Premium features for enhanced learning<br>
@@ -620,7 +711,7 @@
                 <div class="newsletter">
                     <form>
                         <input type="email" placeholder="Your email">
-                        <button type="submit">Subscribe</button>
+                        <button type="submit" onclick="showModal(); return false;">Subscribe</button>
                     </form>
                     <div>Stay Connected with Sindhi Culture</div>
                 </div>
@@ -630,5 +721,37 @@
             &copy; 2024 Sindhiyat. All rights reserved.
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div id="comingSoonModal" class="modal">
+        <div class="modal-content">
+            <h2>Coming Soon! 🚀</h2>
+            <p>This feature is currently under development. We're working hard to bring you the best experience possible. Stay tuned for updates!</p>
+            <button class="modal-close" onclick="closeModal()">Got it!</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById('comingSoonModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('comingSoonModal').classList.remove('show');
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('comingSoonModal');
+            if (event.target == modal) {
+                modal.classList.remove('show');
+            }
+        }
+    </script>
 </body>
 </html>
