@@ -1,0 +1,634 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sindhiyat - Sindhi Culture, Language Learning & Community Platform</title>
+    <meta name="description" content="Discover rich Sindhi heritage through interactive learning, authentic cultural content, and global community connection. Learn Sindhi language with AI tools, explore traditions, cuisine, and folk music. Join 5000+ community members preserving our culture digitally.">
+    <meta name="keywords" content="Sindhi culture, Sindhi language learning, Sindhi community, Indus Valley civilization, Sindhi cuisine, Jhulelal, Sindhi traditions, cultural preservation, AI language learning, Sindhi diaspora">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fff;
+            color: #b30000;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #fff;
+            border-bottom: 2px solid #b30000;
+            padding: 0.5rem 0;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #b30000;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links a {
+            color: #b30000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            background: #b30000;
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .cta-btn {
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover {
+            background: #d32f2f;
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .hero-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-gallery img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #b30000;
+            background: #fff;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            color: #b30000;
+            margin-bottom: 0.5rem;
+        }
+        .hero h2 {
+            font-size: 1.3rem;
+            color: #d32f2f;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1.2rem;
+        }
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        /* About Section */
+        .about-section {
+            margin-bottom: 2rem;
+        }
+        .about-section .section-title {
+            text-align: center;
+            font-size: 1.7rem;
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .about-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .about-gallery img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #b30000;
+            background: #fff;
+        }
+        .about-section p {
+            text-align: center;
+            color: #333;
+            font-size: 1.05rem;
+        }
+        /* Features Section */
+        .features-section {
+            margin-bottom: 2rem;
+        }
+        .features-section .section-title {
+            text-align: center;
+            font-size: 1.7rem;
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .features-flashcards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .flashcard {
+            background: #fff;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            width: 220px;
+            min-height: 220px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(179,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s;
+        }
+        .flashcard:hover {
+            box-shadow: 0 4px 16px rgba(179,0,0,0.15);
+        }
+        .flashcard .icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .flashcard h3 {
+            color: #b30000;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .flashcard p {
+            color: #333;
+            font-size: 0.98rem;
+            text-align: center;
+        }
+        /* Statistics Section */
+        .stats-section {
+            margin-bottom: 2rem;
+        }
+        .stats-section .section-title {
+            text-align: center;
+            font-size: 1.7rem;
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .stats-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .stat-card {
+            background: #fff;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            color: #b30000;
+            font-weight: 600;
+            text-align: center;
+            min-width: 180px;
+        }
+        /* Testimonials Section */
+        .testimonials-section {
+            margin-bottom: 2rem;
+        }
+        .testimonials-section .section-title {
+            text-align: center;
+            font-size: 1.7rem;
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .testimonials-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .testimonial {
+            background: #fff;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            width: 320px;
+            box-shadow: 0 2px 8px rgba(179,0,0,0.07);
+        }
+        .testimonial p {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial .author {
+            color: #b30000;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        /* Cultural Highlights Section */
+        .highlights-section {
+            margin-bottom: 2rem;
+        }
+        .highlights-section .section-title {
+            text-align: center;
+            font-size: 1.7rem;
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .highlight-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-gallery img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #b30000;
+            background: #fff;
+        }
+        .highlights-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .highlight-card {
+            background: #fff;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            width: 260px;
+            box-shadow: 0 2px 8px rgba(179,0,0,0.07);
+        }
+        .highlight-card h4 {
+            color: #b30000;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .highlight-card p {
+            color: #333;
+            font-size: 0.98rem;
+        }
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .cta-section h2 {
+            color: #b30000;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .cta-section p {
+            color: #333;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        .cta-section .info-list {
+            color: #b30000;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+        /* Footer */
+        .footer {
+            background: #b30000;
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            margin-top: 2rem;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        .footer-section {
+            min-width: 200px;
+        }
+        .footer-section h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.4rem;
+        }
+        .footer-section ul a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.98rem;
+        }
+        .footer-section ul a:hover {
+            text-decoration: underline;
+        }
+        .contact-info {
+            font-size: 0.98rem;
+        }
+        .newsletter form {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .newsletter input[type="email"] {
+            padding: 0.4rem;
+            border-radius: 4px;
+            border: none;
+            font-size: 0.98rem;
+        }
+        .newsletter button {
+            background: #fff;
+            color: #b30000;
+            border: none;
+            border-radius: 4px;
+            padding: 0.4rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container, .main-content, .footer-content {
+                max-width: 98vw;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .features-flashcards, .stats-cards, .testimonials-list, .highlights-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-gallery, .hero-gallery, .highlight-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar, .footer {
+                padding: 1rem 0;
+            }
+            .cta-btn {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.98rem;
+            }
+            .flashcard, .testimonial, .highlight-card {
+                width: 95vw;
+                min-width: unset;
+            }
+            .stat-card {
+                min-width: unset;
+                width: 95vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="homes.html" class="logo">
+                <img src="images/sindhiyat.jpg" alt="Sindhiyat Logo" class="logo-img">
+                Sindhiyat
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">Cultural Heritage</a></li>
+                <li><a href="#">Learning</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Support Us</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <button class="cta-btn">Login</button>
+                <button class="cta-btn">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <section class="hero">
+            <div class="hero-gallery">
+                <img src="images/sindh1.jpeg" alt="khairpur" class="hero-img">
+                <img src="images/ajrak.jpeg" alt="Sindhi Ajrak">
+                <img src="images/jhulelal.jpeg" alt="Jhulelal">
+                <img src="images/cuisine.jpeg" alt="Sindhi Cuisine">
+            </div>
+            <h1>Welcome to Sindhiyat - Reviving Traditions, Reimagining Community!</h1>
+            <h2>Preserving the Rich Legacy of Sindhi Culture Through Digital Innovation</h2>
+            <p>
+                Discover the vibrant tapestry of Sindhi culture, from our ancient roots in the Indus Valley to our global diaspora today. Join thousands of community members in celebrating, learning, and preserving our cherished traditions for future generations.
+            </p>
+            <div class="hero-cta">
+                <button class="cta-btn">Explore Our Heritage</button>
+                <button class="cta-btn">Start Learning Sindhi</button>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2 class="section-title">Bridging Past and Future</h2>
+            <div class="about-gallery">
+                <img src="images/indusvalley.jpeg" alt="Indus Valley Civilization">
+                <img src="images/chaliya.jpeg" alt="Sindhi Festival">
+                <img src="images/family.jpeg" alt="Sindhi Family">
+            </div>
+            <p>
+                Sindhiyat is more than just a website—it's a digital sanctuary for Sindhi culture. Born from the vision of preserving our rich heritage while embracing modern technology, we serve as a comprehensive platform where tradition meets innovation.<br>
+                Our mission is to create a vibrant online community that celebrates Sindhi identity, promotes cultural education, and connects Sindhi people worldwide. Whether you're rediscovering your roots or learning about our culture for the first time, Sindhiyat is your gateway to an extraordinary journey.
+            </p>
+        </section>
+
+        <section class="features-section">
+            <h2 class="section-title">Discover What Makes Us Unique</h2>
+            <div class="features-flashcards">
+                <div class="flashcard">
+                    <div class="icon">🏛</div>
+                    <h3>Rich Cultural Heritage</h3>
+                    <p>Explore centuries of Sindhi history, from the ancient Indus Valley civilization to modern diaspora stories. Discover our festivals, customs, and the resilient spirit that defines us.</p>
+                </div>
+                <div class="flashcard">
+                    <div class="icon">🎭</div>
+                    <h3>Living Traditions</h3>
+                    <p>Experience our vibrant folk music, traditional dances like Jhulelal, and cultural celebrations that keep our community spirit alive across the globe.</p>
+                </div>
+                <div class="flashcard">
+                    <div class="icon">🍛</div>
+                    <h3>Culinary Delights</h3>
+                    <p>Savor the flavors of authentic Sindhi cuisine with traditional recipes, cooking techniques, and the heartwarming stories behind our beloved dishes like Sindhi Curry and Koki.</p>
+                </div>
+                <div class="flashcard">
+                    <div class="icon">🤖</div>
+                    <h3>Smart Learning Tools</h3>
+                    <p>Master the Sindhi language with our innovative AI tutor, intelligent translator, and interactive quizzes designed to make learning engaging and effective.</p>
+                </div>
+                <div class="flashcard">
+                    <div class="icon">🌍</div>
+                    <h3>Worldwide Connection</h3>
+                    <p>Connect with Sindhi community members across continents, share experiences, and participate in meaningful cultural discussions and events.</p>
+                </div>
+                <div class="flashcard">
+                    <div class="icon">📚</div>
+                    <h3>Preserving Legacy</h3>
+                    <p>Contribute to preserving Sindhi culture for future generations through digital archives, storytelling, and collaborative cultural documentation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2 class="section-title">Our Growing Community</h2>
+            <div class="stats-cards">
+                <div class="stat-card">5,000+ Active Community Members</div>
+                <div class="stat-card">500+ Cultural Articles & Stories</div>
+                <div class="stat-card">1,200+ Traditional Recipes Documented</div>
+                <div class="stat-card">50+ Folk Songs & Music Pieces</div>
+                <div class="stat-card">25+ Countries with Active Users</div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <h2 class="section-title">Voices from Our Community</h2>
+            <div class="testimonials-list">
+                <div class="testimonial">
+                    <p>"Sindhiyat helped me reconnect with my roots after years of living abroad. The cultural content is authentic and beautifully presented."</p>
+                    <div class="author">— Priya Sharma, Software Engineer, Canada</div>
+                </div>
+                <div class="testimonial">
+                    <p>"As a young Sindhi, I was losing touch with my language. The AI learning tools here made it fun and easy to learn Sindhi script and conversation."</p>
+                    <div class="author">— Arjun Khiani, Student, Mumbai</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The community forum is amazing! I've connected with distant relatives and learned so much about our family traditions."</p>
+                    <div class="author">— Sunita Advani, Teacher, London</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <h2 class="section-title">Featured Cultural Elements</h2>
+            <div class="highlight-gallery">
+                <img src="images/jhulelal2.jpeg" alt="Jhulelal">
+                <img src="images/ajrak1.jpeg" alt="Ajrak & Topi">
+                <img src="images/chaliya1.jpeg" alt="Chaliho Festival">
+            </div>
+            <div class="highlights-list">
+                <div class="highlight-card">
+                    <h4>Jhulelal - Our Patron Saint</h4>
+                    <p>Brief description of Lord Jhulelal and his significance in Sindhi culture.</p>
+                </div>
+                <div class="highlight-card">
+                    <h4>Sindhi Ajrak & Topi</h4>
+                    <p>The cultural importance of these traditional items and their symbolic meaning.</p>
+                </div>
+                <div class="highlight-card">
+                    <h4>Chaliho Festival</h4>
+                    <p>Overview of our 40-day spiritual observance and its cultural significance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Begin Your Cultural Journey?</h2>
+            <p>
+                Join thousands of Sindhi community members who are already exploring their heritage, learning their language, and connecting with their roots through Sindhiyat.
+            </p>
+            <button class="cta-btn">Sign Up Free Today</button>
+            <button class="cta-btn">Explore as Guest</button>
+            <div class="info-list">
+                ✓ Free to join and explore basic content<br>
+                ✓ Premium features for enhanced learning<br>
+                ✓ Mobile-friendly platform<br>
+                ✓ Regular cultural updates and events
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Cultural Heritage</a></li>
+                    <li><a href="#">Learning Center</a></li>
+                    <li><a href="#">Community Guidelines</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Contact Information</h5>
+                <div class="contact-info">
+                    Email: hello@sindhiyat.com<br>
+                    Community Support: community@sindhiyat.com<br>
+                    Technical Support: support@sindhiyat.com
+                </div>
+            </div>
+            <div class="footer-section">
+                <h5>Social Media</h5>
+                <ul>
+                    <li><a href="#">Facebook Community Group</a></li>
+                    <li><a href="#">Instagram Cultural Posts</a></li>
+                    <li><a href="#">YouTube Educational Videos</a></li>
+                    <li><a href="#">Twitter Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Newsletter Signup</h5>
+                <div class="newsletter">
+                    <form>
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div>Stay Connected with Sindhi Culture</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Sindhiyat. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
